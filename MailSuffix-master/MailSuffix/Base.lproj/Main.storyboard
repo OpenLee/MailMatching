@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,51 +13,46 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdG-bd-mii">
-                                <rect key="frame" x="200" y="120" width="200" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhX-AK-63z" customClass="XLTextField">
+                                <rect key="frame" x="60" y="120" width="200" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="wT4-ud-fjQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="M3g-8z-EtD"/>
+                                    <constraint firstAttribute="height" constant="30" id="QhZ-pw-5CN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="UN8-M9-eRm"/>
+                                    <constraint firstAttribute="width" constant="200" id="iAl-ch-aSl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="iS4-5j-C4i"/>
-                                </connections>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M3g-8z-EtD"/>
+                                        <exclude reference="UN8-M9-eRm"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-XH-9iu">
-                                <rect key="frame" x="206" y="126" width="188" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="afD-Fh-Wlv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wdG-bd-mii" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="6yR-BG-exl"/>
-                            <constraint firstItem="Yyg-XH-9iu" firstAttribute="centerY" secondItem="wdG-bd-mii" secondAttribute="centerY" id="AK9-3l-LGb"/>
-                            <constraint firstItem="Yyg-XH-9iu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GOB-ye-ujk"/>
-                            <constraint firstItem="wdG-bd-mii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mbk-jT-zfT"/>
+                            <constraint firstItem="fhX-AK-63z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="2pO-Mu-Pkg"/>
+                            <constraint firstItem="fhX-AK-63z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TY4-nA-bGj"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="LgH-fp-qKl" appends="YES" id="hfY-xj-ReM"/>
+                            <outletCollection property="gestureRecognizers" destination="jJg-mB-AQr" appends="YES" id="Tzl-id-IIm"/>
                         </connections>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="mailTextField" destination="wdG-bd-mii" id="hd5-VD-KRf"/>
-                        <outlet property="suffixLbl" destination="Yyg-XH-9iu" id="IOB-6e-smC"/>
+                        <outlet property="textField" destination="fhX-AK-63z" id="1Nn-ae-fcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="LgH-fp-qKl">
+                <tapGestureRecognizer id="jJg-mB-AQr">
                     <connections>
-                        <action selector="gestureTap:" destination="BYZ-38-t0r" id="t5a-d7-qAB"/>
+                        <action selector="tapEnd:" destination="BYZ-38-t0r" id="1oP-NF-wiE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

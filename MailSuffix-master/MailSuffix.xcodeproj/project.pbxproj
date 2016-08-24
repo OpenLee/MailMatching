@@ -15,6 +15,7 @@
 		58D1D4421BE9D5F90087D7D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D1D4401BE9D5F90087D7D9 /* LaunchScreen.storyboard */; };
 		58D1D44D1BE9D5F90087D7D9 /* MailSuffixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1D44C1BE9D5F90087D7D9 /* MailSuffixTests.m */; };
 		58D1D4581BE9D5F90087D7D9 /* MailSuffixUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D1D4571BE9D5F90087D7D9 /* MailSuffixUITests.m */; };
+		FCEF32001D6D8810007DBC82 /* XLTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEF31FF1D6D8810007DBC82 /* XLTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		58D1D4531BE9D5F90087D7D9 /* MailSuffixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailSuffixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D1D4571BE9D5F90087D7D9 /* MailSuffixUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MailSuffixUITests.m; sourceTree = "<group>"; };
 		58D1D4591BE9D5F90087D7D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCEF31FE1D6D8810007DBC82 /* XLTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLTextField.h; sourceTree = "<group>"; };
+		FCEF31FF1D6D8810007DBC82 /* XLTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		58D1D4311BE9D5F90087D7D9 /* MailSuffix */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF31FE1D6D8810007DBC82 /* XLTextField.h */,
+				FCEF31FF1D6D8810007DBC82 /* XLTextField.m */,
 				58D1D4351BE9D5F90087D7D9 /* AppDelegate.h */,
 				58D1D4361BE9D5F90087D7D9 /* AppDelegate.m */,
 				58D1D4381BE9D5F90087D7D9 /* ViewController.h */,
@@ -271,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D1D43A1BE9D5F90087D7D9 /* ViewController.m in Sources */,
+				FCEF32001D6D8810007DBC82 /* XLTextField.m in Sources */,
 				58D1D4371BE9D5F90087D7D9 /* AppDelegate.m in Sources */,
 				58D1D4341BE9D5F90087D7D9 /* main.m in Sources */,
 			);
@@ -498,6 +504,7 @@
 				58D1D45E1BE9D5F90087D7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58D1D45F1BE9D5F90087D7D9 /* Build configuration list for PBXNativeTarget "MailSuffixTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				58D1D4611BE9D5F90087D7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58D1D4621BE9D5F90087D7D9 /* Build configuration list for PBXNativeTarget "MailSuffixUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +522,7 @@
 				58D1D4641BE9D5F90087D7D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
