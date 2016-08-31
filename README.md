@@ -1,0 +1,2 @@
+# MailMatching
+在邮箱textField中输入邮箱地址自动进行优先级的匹配
