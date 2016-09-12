@@ -24,17 +24,23 @@
     /**
      手动frame创建XLTextField
      */
-    //    XLTextField * Field = [[XLTextField alloc] initWithFrame:CGRectMake(100, 200, 200, 30) fontSize:12];
-    //    Field.placeholder = @"输入邮箱地址";
-    //    Field.mailTypeArray = [NSMutableArray arrayWithObjects:@"@qq.com",@"@163.com",@"@126.com",@"@yahoo.com",@"@139.com",@"@henu.com", nil];
-    ////    Field.mailMatchColor = [UIColor redColor];
-    //    [self.view addSubview:Field];
+//        XLTextField * Field = [[XLTextField alloc] initWithFrame:CGRectMake(100, 200, 200, 30) fontSize:12];
+//        Field.placeholder = @"输入邮箱地址";
+//        Field.mailTypeArray = [NSMutableArray arrayWithObjects:@"@qq.com",@"@163.com",@"@126.com",@"@yahoo.com",@"@139.com",@"@henu.com", nil];
+//    //    Field.mailMatchColor = [UIColor redColor];
+//        Field.didPressedReturnCompletion = ^(UITextField * textField){
+//            NSLog(@"textFieldText%@",textField);
+//        };
+//        [self.view addSubview:Field];
     
     
     /**
      利用xib创建XLTextField
      */
     self.textField.mailTypeArray = [NSMutableArray arrayWithObjects:@"@qq.com",@"@163.com",@"@126.com",@"@yahoo.com",@"@139.com",@"@henu.com", nil];
+    self.textField.didPressedReturnCompletion = ^(UITextField * textField){
+        NSLog(@"textFieldText%@",textField);
+    };
     //    self.textField.mailMatchColor = [UIColor redColor];
 }
 

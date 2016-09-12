@@ -187,4 +187,13 @@ typedef NS_ENUM( NSUInteger,XLLayoutType) {
     return YES;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    self.text = self.email;
+    self.mailLabel.text = @"";
+    if (self.didPressedReturnCompletion) {
+        self.didPressedReturnCompletion(self);
+    }
+    return YES;
+}
 @end
