@@ -177,13 +177,31 @@ typedef NS_ENUM( NSUInteger,XLLayoutType) {
 
 #pragma mark - UITextFieldDelegate
 
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [self didEndEditing];
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldShouldBeginEditing:)]) {
+        [self.customDelegate hotelTextFieldShouldBeginEditing:textField];
+    }
+    return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldDidBeginEditing:)]) {
+        [self.customDelegate hotelTextFieldDidBeginEditing:textField];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self didEndEditing];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldDidEndEditing:)]) {
+        [self.customDelegate hotelTextFieldDidEndEditing:textField];
+    }
+}
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     [self configMailMatchingRange:range replacementString:string];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextField:shouldChangeCharactersInRange:replacementString:)]) {
+        [self.customDelegate hotelTextField:textField shouldChangeCharactersInRange:range replacementString:string];
+    }
     return YES;
 }
 
@@ -193,6 +211,9 @@ typedef NS_ENUM( NSUInteger,XLLayoutType) {
     self.mailLabel.text = @"";
     if (self.didPressedReturnCompletion) {
         self.didPressedReturnCompletion(self);
+    }
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldShouldReturn:)]) {
+        [self.customDelegate hotelTextFieldShouldReturn:textField];
     }
     return YES;
 }

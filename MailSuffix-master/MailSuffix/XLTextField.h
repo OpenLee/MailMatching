@@ -14,12 +14,32 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  如果接入的类需要在textField的代理方法中做操作 可实现对应的协议即可
+ */
+@protocol HotelEmailTextFieldDelegate <NSObject>
+
+@optional
+
+- (BOOL)hotelTextFieldShouldBeginEditing:(UITextField *)textField;
+- (void)hotelTextFieldDidBeginEditing:(UITextField *)textField;
+- (void)hotelTextFieldDidEndEditing:(UITextField *)textField;
+- (BOOL)hotelTextField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (BOOL)hotelTextFieldShouldReturn:(UITextField *)textField;
+
+@end
+
 typedef void(^didPressedReturn)(UITextField *);
 
 @interface XLTextField : UITextField
 
 - (instancetype)init __attribute__((unavailable("init方法不可用，请用initWithName:fontSzie:")));
 + (instancetype)new  __attribute__((unavailable("new方法不可用，请用initWithName:fontSzie:")));
+
+/**
+ *  optional  根据自己需求
+ */
+@property (nonatomic, weak) id<HotelEmailTextFieldDelegate> customDelegate;
 
 /**
  *  Optional 点击return的回调block 根据自己需求
