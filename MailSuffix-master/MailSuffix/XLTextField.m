@@ -178,29 +178,29 @@ typedef NS_ENUM( NSUInteger,XLLayoutType) {
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldShouldBeginEditing:)]) {
-        [self.customDelegate hotelTextFieldShouldBeginEditing:textField];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(XLTextFieldShouldBeginEditing:)]) {
+        [self.customDelegate XLTextFieldShouldBeginEditing:textField];
     }
     return YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldDidBeginEditing:)]) {
-        [self.customDelegate hotelTextFieldDidBeginEditing:textField];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(XLTextFieldDidBeginEditing:)]) {
+        [self.customDelegate XLTextFieldDidBeginEditing:textField];
     }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     [self didEndEditing];
-    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldDidEndEditing:)]) {
-        [self.customDelegate hotelTextFieldDidEndEditing:textField];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(XLTextFieldDidEndEditing:)]) {
+        [self.customDelegate XLTextFieldDidEndEditing:textField];
     }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     [self configMailMatchingRange:range replacementString:string];
-    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextField:shouldChangeCharactersInRange:replacementString:)]) {
-        [self.customDelegate hotelTextField:textField shouldChangeCharactersInRange:range replacementString:string];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(XLTextField:shouldChangeCharactersInRange:replacementString:)]) {
+        [self.customDelegate XLTextField:textField shouldChangeCharactersInRange:range replacementString:string];
     }
     return YES;
 }
@@ -212,8 +212,8 @@ typedef NS_ENUM( NSUInteger,XLLayoutType) {
     if (self.didPressedReturnCompletion) {
         self.didPressedReturnCompletion(self);
     }
-    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(hotelTextFieldShouldReturn:)]) {
-        [self.customDelegate hotelTextFieldShouldReturn:textField];
+    if (self.customDelegate && [self.customDelegate respondsToSelector:@selector(XLTextFieldShouldReturn:)]) {
+        [self.customDelegate XLTextFieldShouldReturn:textField];
     }
     return YES;
 }
